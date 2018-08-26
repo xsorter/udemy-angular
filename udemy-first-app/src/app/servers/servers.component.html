@@ -1,7 +1,7 @@
-<label for="button">{{serverName}}</label>
+
 
 <input 
-  (input)="onUpdateServerName($event)"
+  [(ngModel)]="serverName"
   type="text" 
   class="form-control">
 
