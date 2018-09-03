@@ -1,1 +1,3 @@
-<div>Served id {{serverId}} id {{ getServerStatus() }}</div>
+<div [ngClass]="{online: serverStatus === 'online'}">
+    Served id {{serverId}} id {{ getServerStatus() }}
+</div>
