@@ -1,0 +1,17 @@
+<button (click)="onButtonClick()">
+  display details
+</button>
+
+<p *ngIf="showDetails">
+  Secret password - tuna
+</p>
+
+<ul>
+  <li 
+    *ngFor="let time of timestampArray; let i = index"
+    [ngClass]="{colorWhite: i >= 4}"
+    [ngStyle]="{background: i >= 4 ? 'blue' : 'transparent'}"
+  >
+    {{time}} and {{i}}
+  </li>
+</ul>
