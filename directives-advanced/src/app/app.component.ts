@@ -10,4 +10,5 @@ export class AppComponent {
   onlyOdd = false;
   onlyOddNumbers = [1, 3, 5];
   onlyEvenNumbers = [2, 4];
+  value = 11;
 }
