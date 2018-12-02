@@ -8,6 +8,7 @@ import { UsersComponent } from "./users/users.component";
 import { HomeComponent } from "./home/home.component";
 import { Routes, RouterModule } from "@angular/router";
 import { AuthGuard } from "./auth-guard.service";
+import { CanDeactivateGuard } from "./servers/edit-server/can-deactivate-guard.service";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
   
   {path: 'servers', /* canActivate: [AuthGuard], */ canActivateChild: [AuthGuard],component: ServersComponent, children: [
     {path: ':id', component: ServerComponent},
-    {path: ':id/edit', component: EditServerComponent},
+    {path: ':id/edit', canDeactivate: [CanDeactivateGuard], component: EditServerComponent},
   ]},
   {path: 'not-found', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/not-found'}
