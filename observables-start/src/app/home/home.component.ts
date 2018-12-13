@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription } from 'rxjs/Rx';
 import 'rxjs/Rx';
 import { Observer } from 'rxjs/Observer';
 
@@ -8,16 +8,20 @@ import { Observer } from 'rxjs/Observer';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+  numbersSubscription: Subscription;
+  customSubscription: Subscription;
 
   constructor() { }
 
   ngOnInit() {
-    /* const myNumbers = Observable.interval(1000);
-    myNumbers.subscribe(
+    const myNumbers = Observable.interval(1000);
+    
+    this.numbersSubscription = myNumbers.subscribe(
       (number) => {
+        console.log(number)
       }
-    ) */
+    )
     const myObservable = Observable.create(
       (observer: Observer<any>) => {
         setTimeout(() => {
@@ -32,7 +36,7 @@ export class HomeComponent implements OnInit {
       }
     );
 
-    myObservable.subscribe(
+    this.customSubscription = myObservable.subscribe(
       (data) => {
         console.log(data);
       },
@@ -45,4 +49,8 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  ngOnDestroy() {
+    this.customSubscription.unsubscribe();
+    this.numbersSubscription.unsubscribe();
+  }
 }
