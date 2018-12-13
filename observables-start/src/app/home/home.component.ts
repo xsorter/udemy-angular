@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           observer.next('second package')
         } ,4000);
         setTimeout(() => {
-          observer.error('error fired!')
+          observer.complete()
         } ,5000);
       }
     );
