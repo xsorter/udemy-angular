@@ -1,0 +1,14 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #formRef="ngForm">
+    <div class="row">
+      <input 
+        type="email"
+        name="email"
+        ngModel
+        email
+        required
+      >
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
