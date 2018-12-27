@@ -8,8 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   @ViewChild('formRef') form: NgForm;
+  dropdown = ['basic', 'advanced', 'pro'];
 
-  title = 'form-td-practice';
   onSubmit(){
     console.log(this.form);
   }
