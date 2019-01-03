@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
   }
 
   onSubmit(){
-    console.log(this.signupForm.value)
+    console.log(this.signupForm)
   }
 
   onAddHobby(){
