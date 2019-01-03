@@ -27,11 +27,17 @@ export class AppComponent implements OnInit{
     this.signupForm.statusChanges.subscribe(
       (value) => {console.log(value)}
     )
+    this.signupForm.patchValue({
+      'userData': {
+        'username': 'xsorter'
+      }
+    })
     
   }
 
   onSubmit(){
-    console.log(this.signupForm)
+    console.log(this.signupForm);
+    this.signupForm.reset();
   }
 
   onAddHobby(){
