@@ -1,0 +1,20 @@
+<div class="container">
+  <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <input formControlName="project" type="text" name="project">
+    </div>
+    <div class="row">
+      <input formControlName="email" type="email" name="email">
+    </div>
+    <div class="row">
+      <select formControlName="status"  name="status" id="status">
+        <option *ngFor="let stat of statusArray" [ngValue]="stat">
+          {{stat}}
+        </option>
+      </select>
+    </div>
+    <button>
+      Submit
+    </button>
+  </form>
+</div>
