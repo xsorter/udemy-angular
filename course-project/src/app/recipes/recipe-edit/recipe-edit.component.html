@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xs-12">
           <button [disabled]="!recipeForm.valid" class="btn btn-success">Save</button>
-          <button type="button" class="btn btn-danger">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
         </div>
       </div>
       <div class="row">
@@ -26,8 +26,8 @@
             <label for="imagePath">Image URL</label>
             <input 
               type="text" 
-              formControlName="imagePath"
-              id="imagePath" 
+              formControlName="imgPath"
+              id="imgPath" 
               class="form-control"
             >
           </div>
