@@ -9,9 +9,6 @@ export class ServerService {
 
   storeServers(servers: any[]) {
     const headers = new Headers({'Content-type':'application/json'});
-    /* return this.http.post('https://udemy-ng-http-36964.firebaseio.com/data.json', servers, 
-      {headers: headers}
-    ); */
     return this.http.put('https://udemy-ng-http-36964.firebaseio.com/data.json', servers, 
       {headers: headers}
     );
@@ -32,6 +29,18 @@ export class ServerService {
         catchError(error => {
           return throwError(console.log(error.statusText))
         }) 
+      )
+    ;
+  }
+
+  getAppName(){
+    return this.http.get('https://udemy-ng-http-36964.firebaseio.com/appName.json')
+      .pipe(
+        map(
+          (response) => {
+            return response.json()['-LXLPQDcEuRHJM-sHTHc'].appname
+          }
+        )
       )
     ;
   }
