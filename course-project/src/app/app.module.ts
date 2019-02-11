@@ -32,9 +32,10 @@ import { RecipesModule } from './recipes/recipes.module';
   imports: [
     BrowserModule,
     FormsModule,
+    RecipesModule,
     AppRoutingModule,
     HttpClientModule,
-    RecipesModule
+    
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
