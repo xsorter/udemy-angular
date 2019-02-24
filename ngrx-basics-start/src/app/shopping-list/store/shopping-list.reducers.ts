@@ -1,7 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Ingredient } from '../shared/ingredient.model';
-
-export const ADD_INGREDIENT = 'ADD_INGREDIENT';
+import { Ingredient } from '../../shared/ingredient.model';
 
 const initialState = {
   ingredients: [
