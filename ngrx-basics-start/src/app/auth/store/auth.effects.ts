@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import * as AuthActions from '../store/auth.actions';
 import * as firebase from 'firebase';
 import { fromPromise } from 'rxjs/internal-compatibility';
+import { Router } from '@angular/router';
 
 
 @Injectable()
@@ -57,6 +58,7 @@ export class AuthEffects {
     )
     .mergeMap(
       (token: string) => {
+        this.router.navigate(['/']);
         return [
           {
             type: AuthActions.SIGNIN
@@ -70,5 +72,5 @@ export class AuthEffects {
     )
 
 
-  constructor(private actions$: Actions){}
+  constructor(private actions$: Actions, private router: Router){}
 }
