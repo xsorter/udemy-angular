@@ -2,7 +2,9 @@ import { Effect, Actions } from "@ngrx/effects";
 import * as RecipeActions from "../store/recipe.actions";
 import { HttpClient } from "@angular/common/http";
 import { Recipe } from "../recipe.model";
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class RecipeEffects {
   @Effect()
   recipeFetch = this.actions$
@@ -28,7 +30,7 @@ export class RecipeEffects {
           payload: recipes
         };
       }
-    )
+    );
   
   constructor(private actions$: Actions, private httpClient: HttpClient){} 
 }
