@@ -5,6 +5,9 @@ import { Recipe } from "../recipe.model";
 import { Injectable } from "@angular/core";
 import { Store } from "@ngrx/store";
 import * as fromRecipe from "../store/recipes.reducers";
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/withLatestFrom';
 
 @Injectable()
 export class RecipeEffects {

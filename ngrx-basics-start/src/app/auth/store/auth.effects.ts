@@ -4,7 +4,9 @@ import * as AuthActions from '../store/auth.actions';
 import * as firebase from 'firebase';
 import { fromPromise } from 'rxjs/internal-compatibility';
 import { Router } from '@angular/router';
-
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 
 @Injectable()
 export class AuthEffects {
