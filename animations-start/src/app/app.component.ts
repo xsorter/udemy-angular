@@ -18,20 +18,28 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ]),
     trigger('wildState', [
       state('normal', style({
-        'background' : 'red',
+        'background-color' : 'red',
         'transform': 'translateX(0) scale(1)'
       })),
       state('highlighted', style({
-        'background' : 'green',
+        'background-color' : 'green',
         'transform': 'translateX(100px) scale(1)'
       })),
       state('shrunken', style({
-        'background' : 'blue',
+        'background-color' : 'blue',
         'transform': 'translateX(0) scale(0.5)'
       })),
       transition('normal => highlighted', animate(300)),
       transition('highlighted => normal', animate(800)),
-      transition('shrunken <=> *', animate(300))
+      transition('shrunken <=> *', [
+        style({
+          'background-color': 'orange'
+        }),
+        animate(1000, style({
+          'border-radius': '50px'
+        })),
+        animate(500)
+      ])
     ])
   ]
 })
