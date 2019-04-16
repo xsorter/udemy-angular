@@ -79,4 +79,8 @@ export class AppComponent {
     onAdd(item) {
       this.list.push(item);
     }
+
+    onDelete(item) {
+      this.list.shift();
+    }
 }
