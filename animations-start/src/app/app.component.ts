@@ -124,4 +124,12 @@ export class AppComponent {
     onDelete(item) {
       this.list.shift();
     }
+
+    animationStarted(event){
+      console.log('anim start', event)
+    }
+
+    animationEnded(event){
+      console.log('anim end', event)
+    }
 }
