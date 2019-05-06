@@ -60,7 +60,7 @@ describe('UserComponent', () => {
       .and.returnValue(Promise.resolve('Data'));
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(app.data).toBe(undefined);  
+      expect(app.data).toBe('Data');  
     });
   
   }));
